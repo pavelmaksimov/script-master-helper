@@ -24,6 +24,13 @@ class WorkplanManyPK(pydantic.BaseModel):
     )
 
 
+class WorkplanPK(pydantic.BaseModel):
+    name: pydantic.constr(max_length=100)
+    worktime_utc: pendulum.DateTime
+
+    _worktime_utc = validator("worktime_utc", allow_reuse=True)(normalize_datetime)
+
+
 class WorkplanListGeneric(GenericModel, Generic[WorkplanT]):
     workplans: list[WorkplanT]
 

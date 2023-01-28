@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "script-master-helper"
-version = "0.0.1"
+version = "0.0.2"
 description = ""
 authors = ["Pavel Maksimov <vur21@ya.ru>"]
 keywords = []
